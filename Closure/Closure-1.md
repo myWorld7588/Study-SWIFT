@@ -49,7 +49,6 @@ func doSomething() {
 
 표현식은 이렇게 쓰는데, 익명 함수인 만큼 `func` 이란 키워드를 쓰지않는다.  그리고 클로저는 다음과 같이 **Closure Head** 그리고 Closure Body 로 이루어져있는데 이 둘을 바로 구분지어주는게 바로 `in` 이라는 키워드다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/14ca56ef-fa1e-41b1-85ef-5503b4bb32c2/Untitled.png)
 
 실제로 어떤식으로 사용하는지 봐보면서 이해를 해보자~
 
