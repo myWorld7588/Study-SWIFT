@@ -13,7 +13,7 @@ Closure 는 프로그래밍할때 진짜 많이 쓰이니까 제대로 배우고
 
 ```swift
 func doSomething() {
-		print("UhMook")
+    print("UhMook")
 }		
 ```
 
@@ -28,7 +28,7 @@ func doSomething() {
 다음과 같이 **이름을 붙이지 않고 사용하는 함수**를 **익명함수**, 즉 **Unnamed Closure**라고 부름 보통 **Closure라고 하면 Unnamed Closure**를 말하긴 함 :)
 
 ```swift
-**let** closure **=** { print("UhMook") }
+let closure = { print("UhMook") }
 ```
 
 ---
@@ -43,7 +43,7 @@ func doSomething() {
 
 ```swift
 {(Parameters) -> Return Type in
-		실행구문
+    실행구문
 }
 ```
 
@@ -58,7 +58,7 @@ func doSomething() {
 
 ```swift
 let closure = {() -> () in
-		print("Closure")
+    print("Closure")
 }
 ```
 
@@ -68,7 +68,7 @@ let closure = {() -> () in
 
 ```swift
 let closure = { (name: String) -> String in
-		return "Hello, \(name)"
+    return "Hello, \(name)"
 }
 ```
 
