@@ -273,8 +273,8 @@ nonOptionalNum // Error! 이런 식으로 if문 밖에서 nonOptionalNum 이라�
 let optionalNum: Int? = 4
 
 if let nonOptionalNum = optionalNum {
-		print(nonOptionalNum) // Optional(4)
-		print(optionalNum) // 4
+    print(nonOptionalNum) // 4
+    print(optionalNum) // Optional(4)
 }
 ```
 
@@ -291,15 +291,15 @@ var someValue: Int?
 var someAnotherValue: Int! = 0
 
 if let temp = someValue {
-	print("it has some value\(Temp)"))
+    print("it has some value\(Temp)"))
 } else {
-	print("doesn't contain value") // doesn't contain value
+    print("doesn't contain value") // doesn't contain value
 }
 
 if let temp = someAnotherValue {
-	print(”It has some value\(temp”)) // It has some value 0
+    print(”It has some value\(temp”)) // It has some value 0
 } else {
-	print(”doesn’t contain value”)
+    print(”doesn’t contain value”)
 ```
 
 ### `if - let` Statement also automatically  unwraps the value and place the unwrapped value in `temp` constant
@@ -311,7 +311,7 @@ if let temp = someAnotherValue {
 ```swift
 let optionalNum : Int? = 4
 Guard let nonOptionalNum = optionalNum else {
-	return
+    return
 }
 print(nonOptionalNum) // 4    **Unwrapped 된 값**
 ```
