@@ -221,17 +221,18 @@ let optionalNum: Int? = 4
 
 **사용은 이런식으로함, 일단 이해하기 쉬우라고 주석 달아놓음.**
 
+
 ```swift
 if let nonOptionalNum = optionalNum {
-	// the 'optionalNum' is not nil
-	print(nonOptionalNum)
-	} else {
-		//The 'optionalNum' is nill
-		print(optionalNum)
-}		
-
+    // the 'optionalNum' is not nil
+    print(nonOptionalNum)
+} else {
+    // The 'optionalNum' is nill
+    print(optionalNum)
+}
 // optionalNum = 4
 ```
+	
 
 **먼저 위 구문의 결과 값은 4.  4라는 옵셔널이 해제된 값이 나옴, 만약 `optionalNum` 에 `nil` 이 지정 됐다면?**
 
