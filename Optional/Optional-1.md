@@ -291,15 +291,16 @@ var someValue: Int?
 var someAnotherValue: Int! = 0
 
 if let temp = someValue {
-    print("it has some value\(Temp)"))
+    print("it has some value\(temp)")
 } else {
     print("doesn't contain value") // doesn't contain value
 }
 
 if let temp = someAnotherValue {
-    print(”It has some value\(temp”)) // It has some value 0
+    print("It has some value\(temp)") // It has some value 0
 } else {
-    print(”doesn’t contain value”)
+    print("doesn’t contain value")
+}
 ```
 
 ### `if - let` Statement also automatically  unwraps the value and place the unwrapped value in `temp` constant
