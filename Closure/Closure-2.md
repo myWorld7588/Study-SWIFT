@@ -143,3 +143,18 @@ doSomething(closure: {
     return $0 + $1 + $2
 })
 ```
+
+</br>
+</br>
+
+# 2-3. 단일 리턴문만 남을 경우, return 도 생략한다
+
+단인리턴문 이란 것은… 이렇게 클로저 내부에 코드가 return 구문 하나만 남은경우를 말함
+
+```swift
+doSomething(closure: {
+    return $0 + $1 + $2
+})
+```
+
+이때는 return 이란 키워드도 다음과 같이 생략할수있슴.
