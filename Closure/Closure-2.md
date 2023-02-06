@@ -121,4 +121,25 @@ doSomething(closure: { (a, b, c) in
 })
 ```
 
+</br>
+</br>
 
+# 2-2. Parameter Name 은 Shorthand Argument Names 로 대체하고 이 경우 Parameter Name 과 in 키워드를 삭제한다
+
+Shorthand Argument Names 가 뭐냐면, Parameter Name 대신 사용 할 수 있는것임..
+
+위에서 Parameter Name 과 in 키워드는 `(a, b, c) in` 이거잖아?  이때 이 `a b c` 라는 Parameter Name 대신에 
+
+a → $0
+
+b → $1
+
+c → $2
+
+이런식으로 `$` 와 `index` 를 이용해서 Parameter 에 순서대로 접근하는것이 바로 Shorthand Argument Names 이다.  따라서 경량 문법 규칙에 의해 위 구문은 이렇게 간단화 될수있슴
+
+```swift
+doSomething(closure: {
+    return $0 + $1 + $2
+})
+```
