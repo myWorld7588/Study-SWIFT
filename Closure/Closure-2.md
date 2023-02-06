@@ -49,3 +49,25 @@ doSomething () { () -> () in
 
 
 # 1-2. 파라미터가 여러개인 함수
+첫번째 파라미터로 success 라는 클로저를 받고, 두번째 파라미터로 fail 이라는 클로저를 받는 함수가 있다.
+
+```swift
+func fetchData(success: () -> (), fail: () -> ()) {
+    // Action
+```
+
+이런 함수가 있을때 Inline Closure 의 경우 호출하는 방법은 이렇다.
+
+```swift
+fetchData(success: { () -> () in
+    print("Success!")
+}, fail: { () -> () in
+    print("Fail!")
+})
+```
+
+
+
+
+
+
