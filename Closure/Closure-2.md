@@ -158,3 +158,20 @@ doSomething(closure: {
 ```
 
 이때는 return 이란 키워드도 다음과 같이 생략할수있슴.
+
+
+```swift
+doSomething(closure: {
+    $0 + $1 + $2
+})
+```
+
+만약 단일 리턴문이 아닐경우 아래처럼 에러가 나버린다.
+```swift
+doSomething(closure: {
+    print("\($0), \($1), \($2)")
+    $0 + $1 + $2 // Error! Missing return in a closure expected to return 'int';
+})
+```
+
+
