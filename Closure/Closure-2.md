@@ -173,5 +173,7 @@ doSomething(closure: {
     $0 + $1 + $2 // Error! Missing return in a closure expected to return 'int';
 })
 ```
+</br>
+</br>
 
-
+2-4. 클로저 파라미터가 마지막 파라미터면, 트레일링 클로저로 작성한다.
