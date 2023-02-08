@@ -224,6 +224,7 @@ doSomething(closure: 1 > 2)
 // 여기서 1 > 2 는 클로저가 아닌 일반 구문이지만, 실제 함수 내에서는
 
 </br>
+
 ```swift
 func doSomething(closure: @autoclosure () -> ()) {
     closure()
