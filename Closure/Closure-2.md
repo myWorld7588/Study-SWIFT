@@ -230,6 +230,10 @@ func doSomething(closure: @autoclosure () -> ()) {
     closure()
 }
 ```
+이렇게 일반 **구문을 클로저처럼 사용**할 수 있음! 왜냐? **클로저로 래핑**한 것이니까  근데, 주의점은
 
+![https://blog.kakaocdn.net/dn/bVyl5T/btqQLku6PrF/eVQvtff5GEH91yZLuzG9v1/img.png](https://blog.kakaocdn.net/dn/bVyl5T/btqQLku6PrF/eVQvtff5GEH91yZLuzG9v1/img.png)
+
+autoclosure를 사용할 경우, **파라미터가 반드시 없어야 함**...!!!! 리턴 타입은 상관 없음!
 
 
