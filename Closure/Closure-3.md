@@ -28,4 +28,4 @@ closure란 익명함수는, 클로저 내부에서 **외부 변수인 num이라�
 
 # 1-1. 클로저의 값 캡쳐 
 
-
+Closure는 값을 캡쳐할 때 Value/Reference 타입에 관계 없이 Reference Capture 한다
