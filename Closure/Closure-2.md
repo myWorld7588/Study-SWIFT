@@ -189,7 +189,7 @@ doSomething() {
 
 이렇게 트레일링 클로저로 작성이 가능하단 것을 알수있다, 또한 파라미터가 하나인 경우 ()도 생략 가능하다고 배웠슴
 
-</br)
+</br>
 # 2-5. ()에 값이 아무 것도 없다면 생략한다
 
 이것이 최종화된 클로저의 경량 문법이다
@@ -200,6 +200,8 @@ doSomething {
 
 ```
 
+</br>
+</br>
 
 # 3.  @autoclosure 란?
 
@@ -217,11 +219,16 @@ func doSomething(closure: @autoclosure () -> ()) {
 다만, 클로저와 다른 점은 실제 클로저를 전달하는 것이 아니기 때문에 파라미터로 값을 넘기는 것 처럼 **()**를 통해 **구문을 넘겨줄 수**가 있음
 
 ```swift
-doSomething(closure: 1 > 2) // 여기서 1 > 2 는 클로저가 아닌 일반 구문이지만, 실제 함수 내에서는
+doSomething(closure: 1 > 2)
 ```
+// 여기서 1 > 2 는 클로저가 아닌 일반 구문이지만, 실제 함수 내에서는
 
+</br>
 ```swift
 func doSomething(closure: @autoclosure () -> ()) {
     closure()
 }
 ```
+
+
+
