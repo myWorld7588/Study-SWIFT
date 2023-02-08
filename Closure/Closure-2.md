@@ -255,6 +255,27 @@ autoclosure를 사용할 경우, **파라미터가 반드시 없어야 함**...
 </br>
 </br>
 
+# 4. @escaping
 
+지금까지 짜왔던 다음과 같은 클로저는
+
+```swift
+func doSomething(closure: () -> ()) {
+}
+```
+
+모오두 non-escaping Closure  임.  무슨 말이냐면, **함수 내부에서 직접 실행하기 위해서만 사용한다.  따라서 파라미터로 받은 클로저를 변수나 상수에 대입할 수 없고, 중첩 함수에서 클로저를 사용할 경우,  중첩함수를 리턴할 수 없다.  함수의 실행 흐름을 탈출하지 않아, 함수가 종료되기 전에 무조건 실행 되어야 한다.**
+
+ ****
+
+실제로 상수에 클로저를 대입해보자.
+
+```swift
+func doSomething(closure: () -> ()) {
+    let y: () -> () = closure // Error!: Using non-escaping parameter 'closure' in a context expecting an @escaping closure
+}
+```
+
+**non-escaping parameter**라고 에러가 뜸 또한 함수의 흐름을 탈출하지 않는다는 말은, **함수가 종료되고 나서 클로저가 실행될 수 없다는 말**임!
 
 
