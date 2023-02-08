@@ -266,10 +266,8 @@ func doSomething(closure: () -> ()) {
 
 모오두 non-escaping Closure  임.  무슨 말이냐면, **함수 내부에서 직접 실행하기 위해서만 사용한다.  따라서 파라미터로 받은 클로저를 변수나 상수에 대입할 수 없고, 중첩 함수에서 클로저를 사용할 경우,  중첩함수를 리턴할 수 없다.  함수의 실행 흐름을 탈출하지 않아, 함수가 종료되기 전에 무조건 실행 되어야 한다.**
 
- ****
 
 실제로 상수에 클로저를 대입해보자.
-
 ```swift
 func doSomething(closure: () -> ()) {
     let y: () -> () = closure // Error!: Using non-escaping parameter 'closure' in a context expecting an @escaping closure
@@ -278,4 +276,75 @@ func doSomething(closure: () -> ()) {
 
 **non-escaping parameter**라고 에러가 뜸 또한 함수의 흐름을 탈출하지 않는다는 말은, **함수가 종료되고 나서 클로저가 실행될 수 없다는 말**임!
 
+```swift
+func doSomething(closure: () -> ()) {
+    print("function start")
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 10 { // Error!: Escaping closure capture non-escaping paramter
+    closure()
+    }
+    print("function end")
+}
+```
+
+따라서, 10초 뒤 클로져를 실행하는 구문을 넣으면, 함수가 끝나고 클로저가 실행되기 때문에 에러가 남.  또한, 만약 중첩함수 내부에서 매게변수로 받은 클로저를 사용할 경우
+
+```swift
+func outer(closrue: () -> ()) -> () -> () {
+    func inner() {
+        closure()
+    }
+    return inner // Error!: Escaping local function captures non-escaping parameter 'closure'
+}
+```
+
+중첩함수를 리턴할수 없슴.  이 모든 에러의 원인은 non-escaping closure 의 주변 값 capture 방식에있다.  (중첩함수가 클로저를 return할 경우 capture 문제 등)
+
+어쨌든… 이렇게 함수 실행을 벗어나서 함수가 끝난 후에도 클로저를 실행하거나, 
+
+중첩함수에서 실행 후 중첩 함수를 리턴하고 싶거나, 
+
+변수 상수에 대입하고 싶은 경우!! 이때 사용하는 것이 **@escaping** 키워드이다.
+
+```swift
+func doSomething(closure: @escaping () -> ()) {
+}
+```
+
+이렇게 클로저 파라미터 타입 앞에 @escaping 을 붙여주면 되고,  변수나 상수에 파라미터로 받은 클로저를 대입할 수 있고
+
+```swift
+func doSomething(closure: @escaping () -> ()) {
+    let y: () -> () = closure
+}
+```
+
+그리고 함수가 종료된 후에도 클로저가 실행 될 수 있다.
+
+```swift
+func doSomething(closure: @escaping () -> ()) {
+    print("function start")
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 10 { // Error!: Escaping closure capture non-escaping paramter
+    closure()
+    }
+    print("function end")
+}
+
+doSomething { print("closure") }
+
+// function start
+// function end
+// closure
+```
+
+함수가 종료된 후에도 클로저가 실행됨
+
+**근데 이 escaping 클로저를 사용할 경우 주의해야할 점이 있는데,  메모리 관리와 관련된 부분이다.**
+
+예를 들어, 만약 함수가 종료된 후 클로저를 실행하는데, 이때 클로저가 함수 내부 값을 사용함
+
+그럼 이때 함수는 이미 종료 되었는데, **클로저는 함수 내부 값을 어떻게 사용할까**?
+
+이런 메모리 관련 부분 ㅎㅎㅎ!!!! ARC 배우면서 더 알아보자
 
