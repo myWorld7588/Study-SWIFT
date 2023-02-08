@@ -199,3 +199,29 @@ doSomething {
 }
 
 ```
+
+
+# 3.  @autoclosure 란?
+
+### **파라미터로 전달된 일반 구문 & 함수를 클로저로 래핑(Wrapping) 하는 것**
+
+autoclosure는 **파라미터 함수 타입 정의 바로 앞** 에다가 붙여야 한다.
+
+```swift
+func doSomething(closure: @autoclosure () -> ()) {
+}
+```
+
+이렇게 했을 경우, 이제 closure란 파라미터는 **실제 클로저를 전달받지 않지만, 클로저처럼 사용이 가능**
+
+다만, 클로저와 다른 점은 실제 클로저를 전달하는 것이 아니기 때문에 파라미터로 값을 넘기는 것 처럼 **()**를 통해 **구문을 넘겨줄 수**가 있음
+
+```swift
+doSomething(closure: 1 > 2) // 여기서 1 > 2 는 클로저가 아닌 일반 구문이지만, 실제 함수 내에서는
+```
+
+```swift
+func doSomething(closure: @autoclosure () -> ()) {
+    closure()
+}
+```
