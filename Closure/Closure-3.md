@@ -88,5 +88,17 @@ func doSomething() {
 
 이렇게 변경된다.. 이렇듯, Closure는 값의 타입이 Value건 Reference건 모두 **Reference Capture**를 한다는 사실… 그럼 만약 **Value Type으로 Capture**를 하고 싶으면 어떻게 할까??
 
+</br>
+</br>
+
+# 2. 클로저의 캡쳐 리스트 (Capture Lists)
+
+```swift
+let closure = { [num, num2] in
+```
+
+**클로저의 시작인 { 의 바로 옆에  []를 이용해 캡쳐할 멤버를 나열한다 이때 in 키워드도 꼭 함께 작성**
+
 
 # 2-1. Value Type 의 값을 복사해서 Capture 할순 없나?
+
