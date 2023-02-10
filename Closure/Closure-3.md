@@ -136,3 +136,5 @@ let closure = { [num, num2] in
 ```
 
 정리하자면, 클로저는 기본적으로 Value Type의 값도 Reference Capture를 하지만, 클로져 캡쳐 리스트를 이용하면 Const Value Type으로 캡쳐가 가능 하다.
+
+# 2-2. Reference Type 의 값을 복사해서 Capture 할순없나?
