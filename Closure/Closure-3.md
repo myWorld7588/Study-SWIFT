@@ -128,11 +128,11 @@ func doSomething() {
 ```
 
 이렇게 클로저의 `num` 에는 영향을 주지않는다.  하지만, 한 가지 더 유의해야 할 점은 Value Type 으로 캡쳐했을 경우, Closure 를 선언할 당시의 `num` 의 값을 Const Value Type 으로 캡쳐한다.
-여기서 중요한 것은 **Const Value Type**, 즉 **"상수"**로 캡쳐된다는 것이다. 따라서 다음과 같이 closure 내부에서 Value Capture 된 값을 변경할 수 없다.
+여기서 중요한 것은 **Const Value Type**, 즉 **상수**로 캡쳐된다는 것이다. 따라서 다음과 같이 closure 내부에서 Value Capture 된 값을 변경할 수 없다.
 
 ```swift
 let closure = { [num, num2] in
     num = 2 // Error!: can not assign to value: 'num' is an immutable capture
 ```
 
-
+정리하자면, 클로저는 기본적으로 Value Type의 값도 Reference Capture를 하지만, 클로져 캡쳐 리스트를 이용하면 Const Value Type으로 캡쳐가 가능 하다.
