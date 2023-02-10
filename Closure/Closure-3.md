@@ -105,3 +105,27 @@ let closure = { [num, num2] in
 가능하다, 지금 배우고있는 Capture Lists 라는것을 이용하면 가능하다.
 Value Type 의 경우, Value Capture 하고 싶은 변수를 리스트로 명시해주는것!
 
+```swift
+func doSomething() {
+    var num: Int = 0
+    print("num check #1 = \(num)")
+    
+    let closure = { [num] in
+        print("num check #3 = \(num)")
+    }
+    
+    num = 20
+    print("num check #2 = \(num)")
+    closure()
+}
+```
+위처럼 예제를 보면 closure 를 실행하기 전에 외부 변수 `num` 의 값을 20으로 변경했지만
+
+```swift
+// num check #1 = 0
+// num check #2 = 20
+// num check #3 = 0
+```
+
+이렇게 클로저의 `num` 에는 영향을 주지않는다.  하지만, 한 가지 더 유의해야 할 점은 Value Type 으로 캡쳐했을 경우, Closure 를 선언할 당시의 `num` 의 값을 Const Value Type 으로 캡쳐한다.
+여기서 중요한 것은 **Const Value Type**, 즉 **"상수"**로 캡쳐된다는 것이다. 따라서 다음과 같이 closure 내부에서 Value Capture 된 값을 변경할 수 없다.
