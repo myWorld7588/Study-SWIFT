@@ -102,3 +102,6 @@ let closure = { [num, num2] in
 
 # 2-1. Value Type 의 값을 복사해서 Capture 할순 없나?
 
+가능하다, 지금 배우고있는 Capture Lists 라는것을 이용하면 가능하다.
+Value Type 의 경우, Value Capture 하고 싶은 변수를 리스트로 명시해주는것!
+
