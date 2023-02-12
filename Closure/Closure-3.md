@@ -253,5 +253,53 @@ class Cat {
 
 그럼 어떻게 할까? ARC에서 배웠지만, 강한 순환참조는 **weak, unowned**를 통해 해결할 수 있다고 했음!
 
+</br>
 
+# **3-2. 클로저의 강한 순환 참조 해결법**
 
+클로저에서 해결하려면 앞서 공부한 **weak & unowned**에 우리가 Reference Type일 땐 필요 없다 느꼈던 **캡쳐 리스트**를 이용해야 한다. 
+
+## **weak & unowned + Capture Lists**
+
+이 두가지를 이용해서 강한 순환 참조를 해결하는 것이다. 클로저가 프로퍼티에 접근할 때 **self를 참조하면서 문제가 발생** 했잖슴? 따라서 **self에 대한 참조를 Closure Capture Lists를 이용해 weak, unowned로 캡쳐**해버리는 것.
+
+```swift
+class Cat {
+    lazy var getName: () -> String? = { [weak self] in
+        return self?.name
+    }
+}
+```
+
+```swift
+class Cat {
+    lazy var getName: () -> String = { **[unowned self] in**
+        return self.name
+    }
+}
+```
+
+이런 식으로 weak, unowned로  Reference Capture를 해버리는 것이다. 이렇게 클로저 리스트를 통해 강한 순환 참조를 해결해 줄 수 있다…  그러면
+
+```swift
+Kim-Sundae
+Cat Deinit!
+```
+
+**deinit 이 정상 실행이된다** !! 
+
+근데, **weak**의 경우 nil을 할당받을 가능성이 있기에 Optional-Type으로 **self에 대한 Optional Binding**을 해주어야 하지만, **unowned**의 경우엔 Non-Optional Type으로 **self에 대한 Optional Binding 없이 사용**할 수 있음!!!
+
+(물론 Swift 5.0부턴 unowned도 Optional Type이 되지만, 캡쳐 리스트로 동작할 땐 Non-Optional Type으로 동작 하는듯..!?)
+
+ARC를 공부할 때 **unowned를 도대체 언제 사용는가??** 란 의문이 들었었는데..
+
+위와 같이 **클로저를 Lazy Initialization로 선언해서 강한 순환 참조가 일어난 경우**엔,
+
+인스턴스가 존재해야만 (접근하여) 초기화를 시킬 수 있고, 따라서 이때 **self는 값이 있다고 가정**하기 때문에,,****
+
+이 경우엔 **unowend 를 사용하는 것이 가능하고,**
+
+또 **unowned를 사용할 경우 Optional Binding을 하지 않아도 돼서 코드도 깔끔해 짐**!!
+
++ 라고 생각 했으나... 만약 **Lazy로 선언된 클로저가 self를 unowned로 캡쳐**하고, 시점 차이로 인해 **해당 인스턴스에 nil이 할당 된 후에도 lazy property 작업이 실행되어야 하는 상황이 생길 경우,** 이때는 **unowned self capture에 문제**가 있어 보입니다!! 따라서..... weak 권장요 ㅎ_ㅎ…
