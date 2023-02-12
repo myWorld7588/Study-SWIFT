@@ -138,3 +138,33 @@ let closure = { [num, num2] in
 정리하자면, 클로저는 기본적으로 Value Type의 값도 Reference Capture를 하지만, 클로져 캡쳐 리스트를 이용하면 Const Value Type으로 캡쳐가 가능 하다.
 
 # 2-2. Reference Type 의 값을 복사해서 Capture 할순없나?
+
+위에서 Value Type의 값을 클로저 "캡쳐 리스트"를 통해서 Value Capture 하는 것 까진 확인하였다.
+
+그럼 **Reference Type의 값도 Capture Lists에 작성하면, Value Capture가 될까?**
+
+```swift
+class Cat {
+    var name: String = "Sundae"
+}
+ 
+var cat1: Cat = .init()
+ 
+let closure = { [cat1] in
+    print(cat1.name)
+}
+ 
+cat1.name = "Unknown"
+closure()
+```
+
+위 처럼 코드가 있을 때, cat1이라는 인스턴스는 Reference Type임 근데 내가 **클로저 캡쳐 리스트를 통해 cat1을 캡쳐 했으니까, cat1은 복사되어 캡쳐 됐을까?** 결과 값을 보면 알 수 있음
+
+```swift
+Unknown
+```
+
+아니요!! (단호) **캡쳐 리스트를 작성한다고 해도, Reference Type은 Reference Capture**를 함
+
+그럼 **Reference Type은 클로저 캡쳐 리스트를 작성할 필요가 없겠군!??** 싶겠지만, 이건 클로저와 ARC를 보면 언제 쓰는지 이해할 수 있다
+
