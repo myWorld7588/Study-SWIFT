@@ -303,3 +303,19 @@ ARC를 공부할 때 **unowned를 도대체 언제 사용는가??** 란 의문�
 또 **unowned를 사용할 경우 Optional Binding을 하지 않아도 돼서 코드도 깔끔해 짐**!!
 
 + 라고 생각 했으나... 만약 **Lazy로 선언된 클로저가 self를 unowned로 캡쳐**하고, 시점 차이로 인해 **해당 인스턴스에 nil이 할당 된 후에도 lazy property 작업이 실행되어야 하는 상황이 생길 경우,** 이때는 **unowned self capture에 문제**가 있어 보입니다!! 따라서..... weak 권장요 ㅎ_ㅎ…
+
+</br>
+</br>
+
+# 4. SWIFT 에서 클로저는 여러개
+
+![Screen Shot 2023-02-12 at 1.23.47 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c0d4fb6a-ba74-4af2-bcb8-718deefc6f1f/Screen_Shot_2023-02-12_at_1.23.47_PM.png)
+
+클로저는 **전역 함수, 중첩 함수, 익명 함수** 이 세가지를 모두 아우르는 것이다! 중요해!
+
+(물론 일반적으론 익명 함수를 칭하긴 하지만!!)
+
+근데 우린 바로 위에서 Unnamed Closure, 즉 **익명함수**일 때만 값 캡쳐 방식을 살펴봤단 말임? 따라서 **Named Closure**일 때 **값 캡쳐하는 방식**을 살펴볼 것이다.
+
+
+
