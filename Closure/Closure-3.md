@@ -309,14 +309,11 @@ ARC를 공부할 때 **unowned를 도대체 언제 사용는가??** 란 의문�
 
 # 4. SWIFT 에서 클로저는 여러개
 
-Named Closure: 전역함수(Global Function), 중첩함수(Nested Function)
+## Named Closure: 전역함수(Global Function), 중첩함수(Nested Function)
 
-Unnamed Closure: 익명함수(Unnamed Function)
+## Unnamed Closure: 익명함수(Unnamed Function)
 
-클로저는 **전역 함수, 중첩 함수, 익명 함수** 이 세가지를 모두 아우르는 것이다! 중요해!
-
-(물론 일반적으론 익명 함수를 칭하긴 하지만!!)
-
+클로저는 **전역 함수, 중첩 함수, 익명 함수** 이 세가지를 모두 아우르는 것이다! 중요해! (물론 일반적으론 익명 함수를 칭하긴 하지만!!)
 근데 우린 바로 위에서 Unnamed Closure, 즉 **익명함수**일 때만 값 캡쳐 방식을 살펴봤단 말임? 따라서 **Named Closure**일 때 **값 캡쳐하는 방식**을 살펴볼 것이다.
 
 
