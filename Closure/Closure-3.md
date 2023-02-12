@@ -273,7 +273,7 @@ class Cat {
 
 ```swift
 class Cat {
-    lazy var getName: () -> String = { **[unowned self] in**
+    lazy var getName: () -> String = { [unowned self] in
         return self.name
     }
 }
