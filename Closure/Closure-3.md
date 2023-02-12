@@ -282,8 +282,8 @@ class Cat {
 이런 식으로 weak, unowned로  Reference Capture를 해버리는 것이다. 이렇게 클로저 리스트를 통해 강한 순환 참조를 해결해 줄 수 있다…  그러면
 
 ```swift
-Kim-Sundae
-Cat Deinit!
+// Kim-Sundae
+// Cat Deinit!
 ```
 
 **deinit 이 정상 실행이된다** !! 
