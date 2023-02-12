@@ -168,3 +168,55 @@ Unknown
 
 그럼 **Reference Type은 클로저 캡쳐 리스트를 작성할 필요가 없겠군!??** 싶겠지만, 이건 클로저와 ARC를 보면 언제 쓰는지 이해할 수 있다
 
+# 3. Closure & ARC
+
+클로저 캡쳐 리스트를 좀 더 자세히 알아보기위해, 클로저 와 ARC 에 대해 알아보자
+
+# ARC 란?: **인스턴스의 Reference Count를 자동으로 계산하여 메모리를 관리하는 방법.**
+
+조금더 세세하게 알아보기위해 **클로저와 인스턴스간의 관계**에 대해 배워보도록 하자.
+
+다음과 같이 내가 Cat 이란 클래스를 만들고, name 을 얻을 수 있는 Lazy 프로퍼티를 **클로저를 통해 초기화** 했음
+
+***(이때, Lazy로 선언하지 않으면 에러가 발생)***
+
+```swift
+class Cat {
+    var name = ""
+    lazy var getName: () -> String = {
+        return self.name
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+ 
+    deinit {
+        print("Cat Deinit!")
+    }
+}
+```
+
+그리고 나선 다음과 같이 sundae 라는 **인스턴스**를 만들고, **클로저로 작성**되어 있는 **getName이란 지연 저장 프로퍼티를 호출**했음 
+
+```swift
+var sundae: Cat? = .init(name: "Kim-Sundae")
+print(sundae!.getName())
+```
+
+그리고 나서 더이상 sundae 라는 인스턴스가 필요 없어서
+
+```swift
+sundae = nil
+```
+
+이렇게 인스턴스에 nil 을 할당했다, 그럼 인스턴스에 nil이 할당 되었고, 나는 이 인스턴스를 다른 변수에 대입한 적 없고, 따라서 **인스턴스의 ARC가 0이 되어 deinit이 호출**되어야 할 것 아님??
+
+```swift
+// Kim-Sundae 출력
+```
+
+근데, **deinit 함수는 불리지 않음…** 왜냐?? 비밀은 클로저에 있음
+
+
+
