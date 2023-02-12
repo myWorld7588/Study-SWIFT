@@ -309,7 +309,9 @@ ARC를 공부할 때 **unowned를 도대체 언제 사용는가??** 란 의문�
 
 # 4. SWIFT 에서 클로저는 여러개
 
-![Screen Shot 2023-02-12 at 1.23.47 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c0d4fb6a-ba74-4af2-bcb8-718deefc6f1f/Screen_Shot_2023-02-12_at_1.23.47_PM.png)
+Named Closure: 전역함수(Global Function), 중첩함수(Nested Function)
+
+Unnamed Closure: 익명함수(Unnamed Function)
 
 클로저는 **전역 함수, 중첩 함수, 익명 함수** 이 세가지를 모두 아우르는 것이다! 중요해!
 
