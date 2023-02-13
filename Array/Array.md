@@ -26,6 +26,9 @@
 
 **COW(Copy-On-Write): No**
 
+</br>
+</br>
+
 # 1. 배열 생성하기
 
 ```swift
@@ -62,3 +65,24 @@ NSArray는 Class 형식이라 요소는 무조건 “인스턴스” 로 구성�
 왜냐하면 Int, Double 형은 구조체 타입이기 때문에 인스턴스가 아니기 때문이다.  이럴 경우 Swift 가 Array 를 구조체로 만든 이유 (Stack 의 장점) 이 사라진다.
 
 만약 Any 를 사용한다고 하면 런타임시 타입을 알 수 있기 때문에 컴파일 시 실행 오류를 잡기도 힘들다. 너무 추상적인 타입이라 절대 남발하지말길.. **웬만해선 Array 만 써도 거의 다 되긴함 ㅎ**
+
+</br>
+</br>
+
+# 2. 배열 갯수 확인하기
+
+```swift
+var array1 = [1, 2, 3]
+
+let count: Int = array1.count      // 배열 갯수 확인 : 3
+let isEmpty: Bool = array1.isEmpty // 배열 비었는지 확인 : false
+```
+
+만약 배열이 비었는지를 확인하고 싶다면
+
+`array1.count == 0` 이 구문보단 `array1.isEmpty` 를 사용하자
+
+</br>
+</br>
+
+
