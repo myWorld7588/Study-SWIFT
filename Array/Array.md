@@ -86,3 +86,29 @@ let isEmpty: Bool = array1.isEmpty // 배열 비었는지 확인 : false
 </br>
 
 
+# 3. 배열 요소에 접근하기
+
+```swift
+var array1 = [1, 2, 3]
+
+// 1. Subscript로 접근하기
+array1[0]        // 1
+array1[1]        // 2
+ 
+// 2. 범위로 접근하기
+array1[0...1]    // [1, 2]
+ 
+// 3. 속성으로 접근하기
+array1.first     // Optional(1)
+array1.last      // Optional(3)
+```
+
+**Subscript**라는 것은 우리가 흔히 배열에 **대괄호**([])로 접근하는 것을 말한다. 
+
+근데 Subscript나 범위로 접근하는 것은 **위험성**이 있다.
+
+위 주석 결과값에서도 알 수 있듯이 **반환형이 Non-Optional Type 이다.**
+
+따라서 만약 **해당 index에 해당하는 값이 없으면 그것은 에러**로 빠짐
+
+따라서 만약 **첫번째, 마지막 요소에 접근한다면** Subscript보다 **first**, **last**란 속성을 사용하는 것이 더 안전하다. 이것들은 리턴 타입이 **Optional Type이라서 만약 값이 없으면 에러가 아닌 nil을 리턴한다.**
