@@ -188,6 +188,8 @@ array2.removeSubrange(1...3)     // [1, 5, 6, 7, 8, 9]
 array2[0..<2] = []               // [6, 7, 8, 9]
 ```
 </br>
+</br>
+
 | 함수 이름 | 용도 | 리턴 타입 |
 | --- | --- | --- |
 | remove(at:) | 파라미터로 받은 index에 해당하는 값 삭제 | 삭제된 값 리턴Non-Optional Type |
@@ -200,3 +202,4 @@ array2[0..<2] = []               // [6, 7, 8, 9]
 | removeSubrange(_:) | 파라미터로 받은 범위만큼 index 요소 삭제 | X |
 | [n...m] = [] | Subscript 문법으로 n ~ m까지 index 요소 삭제 | X |
 
+</br>
