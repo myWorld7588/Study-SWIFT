@@ -229,4 +229,42 @@ array1.elementsEqual(array3)        //false
 </br>
 </br>
 
+# 8. 배열 요소 검색하기
+
+```swift
+var array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// 1. contains : 해당 값이 배열에 존재하는지 Bool로 리턴
+array1.contains(1)                //true
+array1.contains(10)               //false
+ 
+// 1-1. contains + 클로저 : 직접 검색 구도를 구현 (예제 : 짝수가 하나라도 있으면 true)
+array1.contains { num in          // true
+    num % 2 == 0
+}
+ 
+// 2. first + 클로저 : 클로저의 조건을 만족하는 가장 첫 번째 요소의 "값"을 리턴, 없다면 nil을 리턴
+array1.first { num in             // Optional(2)
+    num % 2 == 0
+}
+ 
+// 3. firstIndex + 클로저 : 클로저의 조건을 만족하는 가장 첫 번째 요소의 "Index"을 리턴, 없다면 nil을 리턴
+array1.firstIndex { num in        // Optional(1)
+    num % 2 == 0
+}
+ 
+// 4. last + 클로저 : 클로저의 조건을 만족하는 가장 마지막 요소의 "값"을 리턴, 없다면 nil을 리턴
+array1.last { num in              // Optional(6)
+    num % 2 == 0
+}
+ 
+// 5. lastIndex + 클로저 : 클로저의 조건을 만족하는 가장 마지막 요소의 "Index"을 리턴, 없다면 nil을 리턴
+array1.lastIndex { num in         // Optional(5)
+    num % 2 == 0
+}
+```
+
+상황에 맞게 잘 사용해보자!
+
+# 9. 배열 정령하기
 
