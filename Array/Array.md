@@ -203,11 +203,13 @@ array2[0..<2] = []               // [6, 7, 8, 9]
 | [n...m] = [] | Subscript 문법으로 n ~ m까지 index 요소 삭제 | X |
 
 </br>
+
 **removeLast**는 리턴 값이 **Non-Optional Type**이라, **마지막 값이 없을 경우 에러**를 내지만, **popLast**는 리턴 값이 **Optional Type**이기 때문에 **마지막 값이 없을 경우 nil을 돌려주고 에러를 내지 않음!**
 
 따라서 **removeLast 보단 조금 더 안전한 popLast를 쓰도록하자!**
 
 참고로 remove 역시 **마지막 요소를 삭제하는 것이 아니면 insert와 같은 이유로 오버헤드가 발생**함
+
 </br>
 </br>
 
