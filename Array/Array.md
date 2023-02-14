@@ -112,3 +112,34 @@ array1.last      // Optional(3)
 따라서 만약 **해당 index에 해당하는 값이 없으면 그것은 에러**로 빠짐
 
 따라서 만약 **첫번째, 마지막 요소에 접근한다면** Subscript보다 **first**, **last**란 속성을 사용하는 것이 더 안전하다. 이것들은 리턴 타입이 **Optional Type이라서 만약 값이 없으면 에러가 아닌 nil을 리턴한다.**
+
+</br>
+</br>
+
+# 4. 배열에 요소 추가하기
+
+```swift
+// 1. append : 끝에 추가
+var array1 = [1, 2, 3]
+array1.append(4) // [1, 2, 3, 4]
+array1.append(contentsOf: [5, 6, 7]) // [1, 2, 3, 4, 5, 6, 7]
+ 
+// 2. inset : 중간에 추가
+var array2 = [1, 2, 3]
+array2.insert(0, at: 0) // [0, 1, 2, 3]
+array2.insert(contentsOf: [10, 100], at: 2) // [0, 1, 10, 100, 2, 3 ]
+```
+
+배열에 요소 추가는 `append`와 `insert`로 할수 있다.  `contentsOf`파라미터를 사용하면 배열에 배열을 붙일 수도 있다. 한가지 유의할 점은, 자료구조 할때 귀에 딱지 앉게 말했지만,
+
+배열의 경우, `insert` 시에 오버헤드가 발생
+
+![https://blog.kakaocdn.net/dn/obT6y/btqSXjtpAw8/4zGsVjnQwEbdVoiC9jrwck/img.gif](https://blog.kakaocdn.net/dn/obT6y/btqSXjtpAw8/4zGsVjnQwEbdVoiC9jrwck/img.gif)
+
+![https://blog.kakaocdn.net/dn/cPYNzI/btqS4LIIsmk/qdiON3eIstXJfhdNYZxZbk/img.gif](https://blog.kakaocdn.net/dn/cPYNzI/btqS4LIIsmk/qdiON3eIstXJfhdNYZxZbk/img.gif)
+
+배열의 경우 index 로 접근하기 때문에 insert 를 해주면 insert 를 하는 위치부터 배열을 재배치 해야 하기 때문에 오버 헤드가 발생하는 것이다.
+
+때문에 꼭 필요한 경우를 제외하고는 `append` 를 쓰도록 하자
+
+
