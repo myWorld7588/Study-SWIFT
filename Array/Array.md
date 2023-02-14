@@ -1,6 +1,6 @@
-배열을 사용할때 알아두면 편한 메서드를 정리해보자.
+배열(Array)을 사용할때 알아두면 편한 메서드를 정리해보자.
 
-## 먼저! Swift 에는 총 2개의 배열이 존재한다.
+## 먼저! Swift 에는 총 2개의 배열 (Array) 이 존재한다.
 
 하나는 우리가 평소에 사용하고있는 Array 라는 것이고
 
@@ -146,5 +146,22 @@ array2.insert(contentsOf: [10, 100], at: 2) // [0, 1, 10, 100, 2, 3 ]
 </br>
 
 # 5. 배열 요소 변경하기
+
+배열 안에 저장된 요소 (Element) 의 값을 변경하고 싶을때 쓰는것 
+
+```swift
+// 1. Subscript 로 변경하기
+var array1 = [1, 2, 3]
+array1[0] = 10                  // [10, 2, 3]
+array1[0...2] = [10, 20, 30]    // [10, 20, 30]
+array1[0...2] = [0]             // [0]
+array1[0..<1] = []              // []
+
+// 2. replaceSubrange 로 바꾸기 (범위 변경 시)
+var array2 = [1, 2, 3]
+array2.replaceSubrange(0...2, with: [10, 20, 30])    // [10, 20, 30]
+array2.replaceSubrange(0...2, with: [0])             // [0]
+array2.replaceSubrange(0..<1. with: [])              // []
+```
 
 
