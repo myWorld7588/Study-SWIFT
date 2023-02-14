@@ -164,4 +164,39 @@ array2.replaceSubrange(0...2, with: [0])             // [0]
 array2.replaceSubrange(0..<1. with: [])              // []
 ```
 
+</br>
+</br>
+
+# 6. 배열 요소 삭제하기
+
+```swift
+// 1. 일반적인 삭제하기
+var array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ 
+array1.remove(at: 2)             // [1, 2, 4, 5, 6, 7, 8, 9] 
+array1.removeFirst()             // [2, 4, 5, 6, 7, 8, 9]   
+array1.removeFirst(2)            // [5, 6, 7, 8, 9]
+array1.removeLast()              // [5, 6, 7, 8]
+array1.popLast()                 // [5, 6, 7] 
+array1.removeLast(2)             // [5]
+array1.removeAll()               // [] 
+ 
+// 2. 특정 범위 삭제하기
+var array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ 
+array2.removeSubrange(1...3)     // [1, 5, 6, 7, 8, 9] 
+array2[0..<2] = []               // [6, 7, 8, 9]
+```
+</br>
+| 함수 이름 | 용도 | 리턴 타입 |
+| --- | --- | --- |
+| remove(at:) | 파라미터로 받은 index에 해당하는 값 삭제 | 삭제된 값 리턴Non-Optional Type |
+| removeFirst | 첫 번째 요소 삭제 | 삭제된 값 리턴Non-Optional Type |
+| removeFirst(_:) | 첫 번째 요소부터 파라미터로 받은 갯수 만큼 삭제 | X |
+| removeLast | 마지막 요소 삭제 | 삭제된 값 리턴Non-Optional Type |
+| popLast | 마지막 요소 삭제 | 삭제된 값 리턴Optional Type |
+| removeLast(_:) | 마지막 요소부터 파라미터로 받은 갯수 만큼 삭제 | X |
+| removeAll | 전체 요소 삭제 | X |
+| removeSubrange(_:) | 파라미터로 받은 범위만큼 index 요소 삭제 | X |
+| [n...m] = [] | Subscript 문법으로 n ~ m까지 index 요소 삭제 | X |
 
