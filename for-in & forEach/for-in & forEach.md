@@ -88,6 +88,9 @@ for value in dict.values.sorted() {
 
 이렇게 해주면 key, value 만 순회할 수 있다.   참고로 정렬 함수인 sorted 함수도 둘다 사용할수있다.
 
+</br>
+</br>
+
 # 1-3. Sets
 
 ```swift
