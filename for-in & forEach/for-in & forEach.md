@@ -88,6 +88,22 @@ for value in dict.values.sorted() {
 
 이렇게 해주면 key, value 만 순회할 수 있다.   참고로 정렬 함수인 sorted 함수도 둘다 사용할수있다.
 
+# 1-3. Sets
+
+```swift
+let nums: Set<Int> = [1, 2, 3, 4]
+
+for num in nums {
+    print(num)        // 3 2 4 1
+}
+```
+
+Set 은 배열과 비슷하지만, 정렬되지 않고 중복 요소를 저장하지 않는 것 뿐이잖슴?
+
+따라서 for - in 문은 그냥 배열하고 동일하게 사용하면 됨.
+
+다만, Dictionary 와 동일하게, print 결과 값은 찍을 때마다 달라질 것이다.
+
 
 
 
