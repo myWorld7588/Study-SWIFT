@@ -66,5 +66,29 @@ for element in dict {
 }
 ```
 
-1
+Dictionary 같은 경우, Key-Value로 저장되어있고, 정렬되지 않는다.  라는 특징을 가지고있잖슴?
+
+따라서 print 결과 값은 찍을 때마다 달라질것이다.  배열이 아니라 넣은 순서대로 정렬이되지 않기 때문이다.
+
+Dictionary 의 경우, 순회하며 받는 루프 상수가 튜플 (key, value) 타입이다.
+
+첫번째 방법과 같이 튜플 상수를 각각 선언해서 받아도 되고, 혹은 두 번째 방법과 같이 한번에 받아서 점문법을 이용해서도 접근 가능하다.  보통 첫번째 방법처럼 쓴다.
+
+만약, key 또는 value 만 반복 하고 싶다면.
+
+```swift
+for key in dict.keys {
+    print(key)          // C B A
+}
+
+for value in dict.values.sorted() {
+    print(value)        // Apple Banana Cherry
+}
+```
+
+이렇게 해주면 key, value 만 순회할 수 있다.   참고로 정렬 함수인 sorted 함수도 둘다 사용할수있다.
+
+
+
+
 
