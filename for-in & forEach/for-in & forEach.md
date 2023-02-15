@@ -52,5 +52,19 @@ enumerated 메서드나 indices 를 이용하거나, 직접 반복 횟수를 지
 </br>
 </br>
 
+# 1-2. Dictionary
 
+```swift
+let dict: [String : String] = ["A" : "Apple", "B" : "Banana", "C" : "Cherry"]
+  
+for (key, value) in dict {
+    print("(\(key) : \(value))")                     // (B : Banana) (C : Cherry) (A : Apple)
+}
+ 
+for element in dict {
+    print("\(element.key) : \(element.value))")      // (B : Banana) (A : Apple) (C : Cherry)
+}
+```
+
+1
 
