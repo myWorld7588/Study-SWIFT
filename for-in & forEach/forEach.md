@@ -87,9 +87,69 @@ Set 은 배열과 비슷하지만, 정렬되지 않고 중복 요소를 저장�
 
 # 3. 그래서.. for-in 과 forEach의 차이점이먼데..
 
-for-in 과 forEach의 사용법은 알아봤으니까,, 이제 차이점을 알봅시다.
+for-in 과 forEach의 사용법은 알아봤으니까,, 이제 차이점을 알아봅시다.
 
-for-in 문은 우리가 직접 구현하는 “반복문” 이었다.  하지만
+</br>
+
+# 3-1. Continue & Break
+
+**for-in** 문은 우리가 **직접 구현**하는 **“반복문”** 이었다.  하지만 **forEach**는 내가 반복하고 싶은 구문을 **forEach라는 함수의 파라미터**로 **“클로저”** 로 작성해서 넘겨주는 것이다.
+
+그렇기 때문에,  **반복문 안에서만 사용**할 수 있는 `continue, break` 는 **for-in 에선 사용 가능하지만, forEach에서는 불가능하다.**
+
+```swift
+for num in nums {
+    break
+    continue
+}
+ 
+nums.forEach {
+    break       // error! 
+    continue    // error! 
+}
+```
+
+**forEach는반복문이 아니라, 클로저를 파라미터로 넘겨주는 메서드**라는 것을 꼭 기억하자
+
+</br>
+
+자
+
+# 3-2. Return 문의 영향
+
+return 문의 영향을 받는 것 또한 for-in / forEach 두개가 다름.
+
+```swift
+func printForIn() {
+    let nums = [1, 2, 3]
+    
+    for num in nums {
+        print(num)
+        return
+    }
+}
+```
+
+먼저, **for - in** 의 경우 **반복문을 돌다가 return 을 만나면 함수 자체가 종료**된다.  따라서 위 함수를 실행할 경우 **“1”** 한번 실행하고 함수가 return 되어 끝난다.
+
+하지만 forEach 같은경우,
+
+```swift
+func printForEach() {
+    let nums = [1, 2, 3]
+    
+    nums.forEach {
+        print($0)
+        return
+    }
+}
+```
+
+반복문이 아닌 클로저 즉, 반복하고자 하는 내용을 **익명 함수**로 전달하기 때문에 **return 을 만난다는 것은 내가 전달한 클로저를 종료** 하는 것을 뜻한다.
+
+그런데, **forEach는 내가 전달한 클로저를 요소 갯수 만큼이나 실행**한다.  따라서 1번째 반복땐 1을 출력하고, 클로저를 return 해버려서, 바로 다음2번째 반복 클로저가 실행되는 것이다.  
+
+한마디로 **반복횟수에 영향을 주지 않는다.**  때문에 결과값도 1 2 3 이렇게 잘 출력된다.
 
 
 
