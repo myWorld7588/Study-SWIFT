@@ -34,7 +34,6 @@ nums.indices.forEach {
 for-in 과 마찬가지로 enumerated 메서드나 indices 를 사용하면됨.
 
 </br>
-</br>
 
 
 # 2-2. Dictionary
@@ -62,7 +61,6 @@ dict.values.sorted().forEach {
 ```
 
 </br>
-</br>
 
 # 2-3. Set
 Set 은 배열과 같다
@@ -84,7 +82,13 @@ Set 은 배열과 비슷하지만, 정렬되지 않고 중복 요소를 저장�
 다만, Dictionary 와 동일하게, print 결과 값은 찍을 때마다 달라질 것이다.
 
 </br>
-</br>
+
+# 3. 그래서.. for-in 과 forEach의 차이점이먼데..
+
+for-in 과 forEach의 사용법은 알아봤으니까,, 이제 차이점을 알봅시다.
+
+for-in 문은 우리가 직접 구현하는 “반복문” 이었다.  하지만
+
 
 
 
