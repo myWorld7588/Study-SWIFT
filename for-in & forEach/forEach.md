@@ -6,6 +6,8 @@ forEach 에 대해 알아봅시다.
 
 forEach는 해당된 Collection 의 요소 갯수만큼 반복해주는 함수다.  하지만 반복할때 할 작업은 클로저로 작성해서 파라미터로 넘겨야한다.  Collection 에 저장된 요소는 클로저 반복 실행할때마다 클로저 상수로 넘겨준다.  이론은 보면 어려우니 코드로 보자!
 
+</br>
+
 # 2-1. Array
 
 ```swift
@@ -30,3 +32,59 @@ nums.indices.forEach {
 ```
 
 for-in 과 마찬가지로 enumerated 메서드나 indices 를 사용하면됨.
+
+</br>
+</br>
+
+
+# 2-2. Dictionary
+
+for - in 과 똑같으나 클로저로 넘겨준단 점만 다르니 참고하자.
+
+```swift
+let dict: [String : String] = ["A" : "Apple", "B" : "Banana", "C" : "Cherry"]
+ 
+dict.forEach {
+    print("(\($0.key) : \($0.value))")  // (B : Banana) (C : Cherry) (A : Apple)
+}
+ 
+dict.forEach { (key, value) in
+    print("(\(key) : \(value))")        // (C : Cherry) (A : Apple) (B : Banana) 
+}
+ 
+dict.keys.forEach {
+    print($0)       // B C A
+}
+ 
+dict.values.sorted().forEach {
+    print($0)       // Apple Banana Cherry
+}
+```
+
+</br>
+</br>
+
+# 2-3. Set
+Set 은 배열과 같다
+
+```swift
+let nums: Set<Int> = [1, 2, 3, 4]
+ 
+nums.forEach {
+    print($0)               // 2 3 1 4
+}
+```
+
+Set은 Array 와 같이 보면 된다.
+
+Set 은 배열과 비슷하지만, 정렬되지 않고 중복 요소를 저장하지 않는 것 뿐이잖슴?
+
+따라서 forEach 문은 그냥 배열하고 동일하게 사용하면 됨.
+
+다만, Dictionary 와 동일하게, print 결과 값은 찍을 때마다 달라질 것이다.
+
+</br>
+</br>
+
+
+
