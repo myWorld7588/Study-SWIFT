@@ -44,5 +44,15 @@ Swift는 뭐라구?? Swift는 Type 에 정말, 굉장히, 어마무시하게 민
 
 라고 할수 있잖슴?  그러면 **Key** 값의 **Type**을 **Any**로 선언하거나, Objective-C의 클래스인 **NSDictionary** 를 사용하면 된다.
 
+.
+
+```swift
+// 4. 여러 타입을 저장하는 딕셔너리 생성하기
+var dict7: [String: Any] = ["name": "Sodeul", "age": 100]
+var dict8: NSDictionary = ["name": "Sodeul", "age": 100]
+```
+
+Value 같은 경우, 배열 때와 마찬가지로 Any라는 자료형을 쓰면 된다.  근데 Key 값도 여러 타입으로 받고 싶은데?? 해서 Any 로 선언할 경우. “Type ‘Any’ does not conform to protocol ‘Hashable’ 에러를 볼수있다.
+
 
 
