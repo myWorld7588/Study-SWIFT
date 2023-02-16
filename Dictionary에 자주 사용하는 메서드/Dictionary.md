@@ -11,4 +11,30 @@
 
 **딕셔너리도 배결과 같은 Collection Type**이고, 때문에 **구조체로 Stack에 저장**된다.  다만 **NSDictionary란 클래스도 지원**함 (Objective-C)
 
+</br>
+
+# 1. 딕셔너리 생성하기
+
+```swift
+// 1. 타입 추론으로 생성하기
+var dict1 = ["height": 165, "age" : 100]
+var dict2 = [:]                                         // error! 타입 추론으론 빈 딕셔너리 생성 불가
+ 
+ 
+// 2. 타입 Annotation으로 생성하기
+var dict3: [String: Int] = [:]                          // 빈 딕셔너리 생성
+var dict4: [String: Int] = ["height": 165, "age" : 100]
+ 
+ 
+// 3. 생성자로 생성하기
+var dict5 = Dictionary<String, Int>()                   // :이 아닌 ,로 명시
+var dict6 = [String: Int]()
+```
+
+보통 간편한 1번이나 2번의 방법을 많이 사용함, Type Annotation 은 중요하니까 2번을 많이 쓰도록 노력해보자.
+
+Swift는 뭐라구?? Swift는 Type 에 정말, 굉장히, 어마무시하게 민감한 언어이다 !!!
+
+**선언과 동시에 Type을 꼭 명시**하거나 **추론할 수 있게** 해주어야 하고, **해당 Type 으로 된 값만 딕셔너리에 저장**할 수 있다!!
+
 
