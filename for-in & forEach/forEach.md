@@ -1,4 +1,6 @@
-forEach 에 대해 알아봅시다.
+forEach 에 대해서 알아보자 사용법은 물론, 차이점에 대해서도 알아보자.
+Fast Enumeration, 즉 for-in과 forEach에 대해 알아보자.
+
 
 # 2. forEach 의 정의:
 
