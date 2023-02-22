@@ -46,4 +46,17 @@ var set3: NSSet = [1, "s"]
 
 </br>
 
+# 2. Set 갯수 확인하기
 
+```swift
+var set1: Set<Int> = [1, 2, 5, 0]
+ 
+let count: Int = set1.count            // Set 갯수 확인 : 4
+let isEmpty: Bool = set1.isEmpty       // Set 비었는지 확인 : false
+```
+
+만약 **Set이 비었는지**를 확인하고 싶다면 **딕셔너리와 마찬가지로**
+
+**`set1.count == 0** 이 구문보단, **set1.isEmpty**`를 사용하자!
+
+</br>
