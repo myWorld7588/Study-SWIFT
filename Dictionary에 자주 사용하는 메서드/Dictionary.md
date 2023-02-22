@@ -150,6 +150,48 @@ dict1.removeValue(forKey: "age")     // 해당 Key가 있다면, 해당 Key-Valu
 dict1.removeAll()
 ```
 
+</br>
+
+# 6. Key, Value 나열하기
+
+```swift
+var dict1 = ["height": 165, "age" : 100]
+ 
+// 1. Key 모두 나열하기
+dict1.keys                         // "height, "age"
+dict1.keys.sorted()                // "age", "height
+ 
+// 2. Value 모두 나열하기
+dict1.values                       // 165, 100
+dict1.values.sorted()              // 100, 165
+```
+
+정렬도 가능하다 (Key, Values 는 찍을때마다 다르게 나올테니 당황하지마시길
+
+(딕셔너리는 정렬되지않는 Collection Type)
+
+</br>
+
+# 7. 딕셔너리 비교하기
+
+```swift
+var dict1 = ["height": 165, "age" : 100]
+var dict2 = ["height": 165, "age" : 100]
+var dict3 = ["Height": 165, "Age" : 100]
+var dict4 = ["name": "sodeul", "address" : "Suwon"]
+ 
+dict1 == dict2              // true
+dict1 == dict3              // false (대소문자 다름)
+dict1 == dict4              // false (모든 Key-Vlaue 다름)
+```
+
+비교 연산자로 비교할 수 있으나, 모든 Key & Value가 정확히 모두 일치해야만 true 가 됨.
+
+대소문자도 비교하기 때문에, dict1 과 dict3는 다른 딕셔너리이다.
+
+</br>
+
+
 
 
 
