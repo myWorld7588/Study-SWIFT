@@ -133,6 +133,23 @@ updateValue의 경우, 리턴 값을 통해 insert인지 update인지를 알 수
 
 </br>
 
+# 5. 딕셔너리에 요소 삭제하기
+
+```swift
+var dict1 = ["height": 165, "age" : 100]
+ 
+// 1. Subscript로 삭제하기 (nil 대입하기)
+dict1["weight"] = nil      // 해당 Key가 없어도 에러 안남
+dict1["height"] = nil      // 해당 Key가 있다면, 해당 Key-Value 삭제
+ 
+// 2. removeValue(forKey:)
+dict1.removeValue(forKey: "weight")  // 해당 Key가 없다면, nil 반환
+dict1.removeValue(forKey: "age")     // 해당 Key가 있다면, 해당 Key-Value 삭제 후 삭제된 Value 반환 : Optional(100)
+ 
+// 3. removeAll() : 전체 삭제하기
+dict1.removeAll()
+```
+
 
 
 
