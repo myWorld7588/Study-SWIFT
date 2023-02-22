@@ -101,6 +101,39 @@ let weight = dict1["weight", default: 200]       // 200
 
 </br>
 
+# 4. 딕셔너리에 요소 추가하기
+
+```swift
+var dict1 = ["height": 165, "age" : 100]
+ 
+// 1. Subscript로 추가하기
+dict1["weight"] = 100       // 해당 Key가 없다면, 추가 (insert)
+dict1["height"] = 200       // 해당 Key가 있다면, Value 덮어쓰기 (update)
+ 
+// 2. updateValue(:forKey)
+dict1.updateValue(100, forKey: "weight")   // 해당 Key가 없다면, 추가하고 nil 리턴 (insert)
+dict1.updateValue(200, forKey: "height")   // 해당 Key가 있다면, Value 덮어쓰고 덮어쓰기 전 값 리턴 (update)
+```
+
+Subscript의 경우, Insert 인지 Update  인지 알 수 없지만
+
+`updateValue`의경우, 리턴 값을 통해 Insert 인지, Update 인지를 알 수 있다. 
+
+**(참고로 Insert 와 Update를 상황에 따라 해주는 것을 Upsert라고 함)**
+
+**upsert is a database operation that will update an existing row if a specified value already exists in a table, and insert a new row if the specified value doesn't already exist**
+
+**upsert는 지정된 값이 테이블에 이미 존재하는 경우 기존 행을 업데이트하고 지정된 값이 아직 존재하지 않으면 새 행을 삽입하는 데이터베이스 작업이다.**
+
+Subscript의 경우, insert인지 update인지 알 수 없지만,
+
+updateValue의 경우, 리턴 값을 통해 insert인지 update인지를 알 수 이씀!
+
+(참고로 Insert와 upsert를 상황에 따라 해주는 것을 upsert라고 함)
+
+</br>
+
+
 
 
 
