@@ -79,6 +79,28 @@ dict1.count == 0 // 이 구문보다는
 dict1.isEmpty // isEmpty 를 사용하자.
 ```
 
+</br>
+
+# 3. 딕셔너리 요소에 접근하기
+
+```swift
+var dict1 = ["height": 165, "age" : 100]
+ 
+// 1. 반환 값 - Optional Type
+let height = dict1["height"]                     // Optional(165)
+let weight = dict1["weight"]                     // nil
+ 
+// 2. 반환 값 - Non Optional Type
+let height = dict1["height", default: 150]       // 165
+let weight = dict1["weight", default: 200]       // 200
+```
+
+딕셔너리의 경우, **Subscript로 요소에 접근**하면 **기본반환값이 Optional Type** 이기 때문에 (해당 Key 값이 없을때를 대비)  따라서, 만약 Optional Type이 싫다고 한다면, Default 값을 직접 명시하면됨.
+
+그러면 반환 값이 Non-Optional Type
+
+</br>
+
 
 
 
