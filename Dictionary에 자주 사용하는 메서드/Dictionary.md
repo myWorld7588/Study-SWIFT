@@ -191,6 +191,35 @@ dict1 == dict4              // false (모든 Key-Vlaue 다름)
 
 </br>
 
+# 8. 딕셔너리 요소 검색하기
+
+```swift
+var dict1 = ["height": 165, "age" : 100]
+ 
+let condition: ((String, Int)) -> Bool = {
+    $0.0.contains("h")
+}
+ 
+// 1. contains(where:)  : 해당 클로저를 만족하는 요소가 하나라도 있을 경우 true
+dict1.contains(where: condition)  // true
+ 
+// 2. first(where:)     : 해당 클로저를 만족하는 첫 번쨰 요소 튜플로 리턴 (딕셔너리는 순서가 없기 때문에, 호출할 때마다 값이 바뀔 수 있음)
+dict1.first(where: condition)  // Optional((key: "height", value: 165))
+ 
+// 3. filter            : 해당 클로저를 만족하는 요소만 모아서 새 딕셔너리로 리턴
+dict1.filter(condition)  // ["height": 165]
+```
+
+### *** 중요 ***
+
+### 딕셔너리 요소를 검색할때는 클로저를 이용해서 검색하게 되는데,  이때 클로저의 파라미터 타입은 내가 지정한 딕셔너리의 타입을 갖는 튜플 이어야 함!  반환 타입은 무족건 Bool 이어야함..
+
+**만약 [String:String] 타입의 딕셔너리라면**, **((String,String)) → Bool** 
+
+**클로저를 이렇게 작성해야함**
+
+
+
 
 
 
