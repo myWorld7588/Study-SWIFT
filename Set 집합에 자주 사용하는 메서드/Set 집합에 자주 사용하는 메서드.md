@@ -168,9 +168,28 @@ set15.isDisjoint(with: set13)               // true  (서로수 집합 : 모든 
 
 # 7. Set의 연산
 
+```swift
+var a: Set = [1,2,3,4,5,6,7,8,9]
+var b: Set = [1,3,5,7,9]
+var c: Set = [2,4,6,8,10]
+ 
+// 1. intersection : 교집합을 새로운 Set으로 리턴
+a.intersection(b)                     // [1, 3, 5, 9, 7]
+b.intersection(c)                     // [] : 겹치는 요소 없음
+ 
+// 2. union : 합집합을 새로운 Set으로 리턴
+a.union(b)                            // [2, 7, 9, 4, 8, 5, 6, 1, 3]
+b.union(c)                            // [9, 3, 10, 4, 1, 8, 7, 2, 6, 5]
+ 
+// 3. sysmetricDifference : 여집합을 새로운 Set으로 리턴
+a.symmetricDifference(b)              // [4, 8, 6, 2]
+b.symmetricDifference(c)              // [10, 9, 8, 6, 7, 1, 2, 4, 3, 5]
+ 
+// 4. subtracting : 차집합을 새로운 Set으로 리턴
+a.subtracting(b)                      // [4, 8, 6, 2]
+b.subtracting(c)                      // [9, 1, 3, 5, 7]
+```
 
-# Set의 연산
 
-![Untitled]([https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b64452f3-6c4e-430d-841b-51d92deff630/Untitled.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F81ZV6%2FbtqWBzsBn53%2FrI1uus5O89gqnl5HLbzPKk%2Fimg.png))
 
 
