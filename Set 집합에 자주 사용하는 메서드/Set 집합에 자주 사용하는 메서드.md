@@ -78,4 +78,26 @@ Array 배열과 동일하게 쓰면됨.  근데 배열과 다른 점은
 
 </br>
 
+# 4. Set에 값 추가하기
+
+```swift
+var set1: Set<Int> = [1, 2, 5, 0]
+ 
+// 1. insert : 값을 추가하고, 추가된 결과를 튜플로 리턴 (중복이면 false, 추가된 값)
+set1.insert(1)                // (false, 1)
+set1.insert(10)               // (true, 10)
+ 
+// 2. update : 값이 존재하지 않으면 추가 후 nil 리턴, 존재할 경우 덮어쓰기 후 덮어쓰기 전 값 리턴
+set1.update(with: 1)          // Optioanl(1)
+set1.update(with: 120)        // nil
+```
+
+보통 insert와 update를 합쳐서 upsert 작업이라고 함.
+
+위 두 함수는 모두 Set에 upsert 작업을 하지만, **결과 값의 차이**가 있다
+
+</br>
+
+
+
 
