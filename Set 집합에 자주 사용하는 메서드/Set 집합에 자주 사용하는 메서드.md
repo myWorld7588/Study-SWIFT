@@ -129,5 +129,41 @@ set1 == set3           // false
 set은 **정렬되지 않은 Collection** 이기 때문에,순서에 상관 없이 **모든 요소가 같으면 비교 연산자가 true**가 된다.
 
 
+### 6-2. 포함관계 확인하기
+
+****① 부분 집합 : isSubSet(of:)****
+
+```swift
+var set1: Set<Int> = [1, 2, 5, 0]
+var set2: Set<Int> = [1, 2]
+ 
+set1.isSubset(of: set2)               // false
+set2.isSubset(of: set1)               // true
+```
+
+****② 상위 집합 : isSuperSet(of:)****
+
+```swift
+var set1: Set<Int> = [1, 2, 5, 0]
+var set2: Set<Int> = [1, 2]
+ 
+set1.isSuperset(of: set2)               // true
+set2.isSuperset(of: set1)               // false
+```
+
+****③ 같은 집합 / 서로수 집합 : isDisjoint(with:)****
+
+```swift
+var set13: Set<Int> = [1, 2, 5, 0]
+var set14: Set<Int> = [1, 2, 5, 0]
+var set15: Set<Int> = [3, 7, 9, 10]
+ 
+set13.isDisjoint(with: set14)               // false (같은 집합 : 모든 요소가 동일한 집합)
+set15.isDisjoint(with: set13)               // true  (서로수 집합 : 모든 요소가 다른 집합)
+```
+
+서로수 집합이면 true, 모든 요소가 동일하면 true
+
+</br>
 
 
