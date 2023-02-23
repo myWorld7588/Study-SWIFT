@@ -169,4 +169,8 @@ set15.isDisjoint(with: set13)               // true  (서로수 집합 : 모든 
 # 7. Set의 연산
 
 
+# Set의 연산
+
+![Untitled]([https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b64452f3-6c4e-430d-841b-51d92deff630/Untitled.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F81ZV6%2FbtqWBzsBn53%2FrI1uus5O89gqnl5HLbzPKk%2Fimg.png))
+
 
