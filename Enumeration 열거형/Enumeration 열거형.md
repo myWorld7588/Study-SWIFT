@@ -10,4 +10,29 @@
 
 성능면에서도 향상된다.
 
-# 2. 열
+</br>
+
+# 2. 열거형 정의하기
+
+## 2-1. 원시값이 없는 열거형
+
+그냥 다음과 같이 **열거형 이름만 쓰고 선언해주면, 원시값이 없는 열거형임…!**
+
+```swift
+enum Position {
+    case top
+    case mid
+    case jug
+    case adc
+    case sup
+} // 이렇게 case를 일일이 다 써서 쭉 나열해도 되고,
+
+enum Position {
+    case top, mid, jug, adc, sup
+} // 이런 방식으로 하나의 case에 ,(comma)를 이용해서 나열해서 써도 됨!!!!
+```
+
+이렇게 작성해 주면 **원시값이 없는 열거형 이다!**
+
+</br>
+
