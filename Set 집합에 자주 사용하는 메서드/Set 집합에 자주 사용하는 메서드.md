@@ -98,6 +98,36 @@ set1.update(with: 120)        // nil
 
 </br>
 
+# 5. Set 요소 삭제하기
+
+```swift
+var set1: Set<Int> = [1, 2, 5, 0]
+ 
+// 1. remove() : 한 가지 요소 삭제할 때 사용, 삭제 후 삭제한 값 return (없는 요소 삭제 시 nil 리턴)
+set1.remove(1)              // Optional(1)
+set1.remove(10)             // nil
+ 
+// 2. removeAll() : 전체 요소 삭제
+set1.removeAll()
+```
+
+</br>
+
+# 6.  Set 비교하기
+
+### 6-1. ==(!=) 연산자로 비교하기
+
+```swift
+var set1: Set<Int> = [1, 2, 5, 0]
+var set2: Set<Int> = [0, 2, 1, 5]
+var set3: Set<Int> = [1, 3, 11, 20]
+ 
+set1 == set2            // true
+set1 == set3           // false
+```
+
+set은 **정렬되지 않은 Collection** 이기 때문에,순서에 상관 없이 **모든 요소가 같으면 비교 연산자가 true**가 된다.
+
 
 
 
