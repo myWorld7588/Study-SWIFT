@@ -166,4 +166,6 @@ set15.isDisjoint(with: set13)               // true  (서로수 집합 : 모든 
 
 </br>
 
+# 7. Set의 연산
+
 
