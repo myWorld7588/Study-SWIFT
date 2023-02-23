@@ -59,3 +59,23 @@ let isEmpty: Bool = set1.isEmpty       // Set 비었는지 확인 : false
 
 `set1.count == 0 이 구문보단, set1.isEmpty`를 사용하자!
 
+</br>
+
+# 3. Set 요소 확인하기
+
+```swift
+var set1: Set<Int> = [1, 2, 5, 0]
+ 
+set1.contains(1)                    // true
+set1.contains(10)                   // false
+```
+
+Array 배열과 동일하게 쓰면됨.  근데 배열과 다른 점은 
+
+- 배열의 contains를 쓸경우 순회 탐색을 한다. (0번 index부터 마지막 index까지 요소가 있나 순차적으로 탐색)
+- Set은 딕셔너리와 같이 Hashable 로 구현되어 있다
+- Hash 충돌이 일어나지 않는함, 시간 복잡도가 상수로 O(1) 만큼만 걸린다.  (배열 Array에 비해 매우 빠르다)
+
+</br>
+
+
