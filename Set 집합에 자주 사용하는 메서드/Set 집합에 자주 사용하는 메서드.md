@@ -168,4 +168,6 @@ set15.isDisjoint(with: set13)               // true  (서로수 집합 : 모든 
 
 # 7. Set의 연산
 
+https://www.notion.so/SET-COLLECTION-TYPE-14865b3434a0477d8a4b8f930c9fe0df?pvs=4#74b35817b08443b1a8041cba441ad637
+
 
