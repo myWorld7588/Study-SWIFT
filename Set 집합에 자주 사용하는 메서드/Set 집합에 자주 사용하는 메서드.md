@@ -57,5 +57,5 @@ let isEmpty: Bool = set1.isEmpty       // Set 비었는지 확인 : false
 
 만약 **Set이 비었는지**를 확인하고 싶다면 **딕셔너리와 마찬가지로**
 
-`set1.count == 0** 이 구문보단, **set1.isEmpty`를 사용하자!
+`set1.count == 0 이 구문보단, set1.isEmpty`를 사용하자!
 
