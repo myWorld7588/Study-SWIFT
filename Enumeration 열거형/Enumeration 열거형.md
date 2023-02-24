@@ -36,3 +36,25 @@ enum Position {
 
 </br>
 
+열거형으로 타입이 지정된 경우, 아래처럼 **.(점문법)을 이용해** **내가 선언한 case에 한해서만 접근**할 수 있다!!
+
+따라서 오타의 가능성도 현저히 줄어들고, 코드의 가독성도 매우 높아짐
+
+![Screen Shot 2023-02-23 at 6.51.55 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/58d4f9e1-35e4-4591-b9af-59a210820808/Screen_Shot_2023-02-23_at_6.51.55_PM.png)
+
+</br>
+
+# 2-2. 원시값이 있는 열거형
+
+위에서 case를 지정할 때, 우린 아무런 값도 대입하지 않았다!! 근데 사실 이 **case에 원시값을 지정**해줄 수도 있는데, 이를 **Raw Value**라고 함. 이때 Raw Value가 될 수 있는 자료형은 총 3가지가 있다!!!
+
+- Number Type
+- Character Type
+- String Type
+
+위와 같은 원시 값을 가지고 싶다면, **enum 선언 시 이름 옆에 Type을 꼭꼭 명시**해주어야 한다.
+
+
+
+
+
