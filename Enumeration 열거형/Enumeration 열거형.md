@@ -95,5 +95,79 @@ sup의 Raw Value를 컴파일러가 지정해야 하는데, **바로 이전 cas
 **실수값이기 때문에** 못더해!!!!!! 하고 에러를 뱉는 것이다.
 
 
+따라서 Int형이 아닌 Number 자료형을 사용할 경우
 
+```swift
+enum Position: Double {
+    case top = 1.0    // 1.0
+    case mid = 2.0    // 2.0
+    case jug = 3.0    // 3.0
+    case adc = 4      // 4
+    case sup          // 5
+}
+```
+
+**Raw Value를 생략하고 싶다면, 바로 이전 case의 Raw Value를 정수 값** 으로 지정해 줘야함.
+
+</br>
+
+# 2-4. Character Type을 가지는 열거형
+
+```swift
+enum Position: Character {
+    case top = "t"
+    case mid = "m"
+    case jug = "j"
+    case adc = "a"
+    case sup = "s"
+}
+```
+
+### **주의할 점!** Character Type으로 열거형을 선언할 경우 **모-든 case에 대한 Raw Value를 직접 선언**해주어야 함
+
+**만약 하나라도 빵꾸나면 바로 에러가난다.** 아까 Double에서 에러난 것과 같은 맥락임이다. 컴파일러는 **지정되지 않은 Raw Value를 이전 case Raw Value를 보고 + 1** 해야 하는데, **이전 case의 Raw Value가 "T"로 정수형이 아니라 + 1  할수없어! 하고 에러 뱉는 것이다.**
+
+</br>
+
+# 2-5. String Type을 가지는 열거형
+
+String은 Character와 달리 **Raw Value를 지정하지 않으면, case 이름과 동일한 Raw Value가 자동완성.**
+
+간단하고 편하구만
+
+```swift
+enum Position: String {
+    case top              // top          
+    case mid              // mid
+    case jug = "iphone"   // iphone
+    case adc              // adc
+    case sup              // sup
+}
+```
+
+그럼, 원시 값이 있는 열거형의 경우는 Raw Value에 어떻게 접근할까?
+
+이름 그대로 **rawValue**란 속성을 이용해 접근하면 됨
+
+```swift
+var user1: Position = .adc    // adc
+var user2: Position = .jug    // jug
+user1                         // adc
+user1.rawValue                // "adc"
+user2                         // jug
+user2.rawValue                // "iphone"
+```
+
+만약, Raw Value가 있는 열거형의 경우,
+
+**Raw Value를 통해서도 열거형을 생성**할 수 있는데!!! 이땐 다음과 같은 생성자를 이용하면 됨
+
+```swift
+var user4 = PositionWithRawValue.init(rawValue: "sup")     // sup
+var user5 = PositionWithRawValue.init(rawValue: "supp")    // nil
+```
+
+근데, 만약 없는 Raw Value 값을 대입할 수 있으니,
+
+이때 반환되는 열거형은 **옵셔널 타입**임! (없는 Raw Value일 경우, nil 리턴)
 
