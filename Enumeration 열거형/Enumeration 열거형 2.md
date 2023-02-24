@@ -52,10 +52,7 @@ enum AppleProduct {
 
 ### 열거형 생성 시 연관값을 함께 전달한다
 
-이렇게 열거형 생성 시 내가 만들어둔 case가 연관값이 함께 뜬다.
-
-
-![Untitled](https://www.notion.so/Enumeration-2-2-b1b23675e2324404aa85f41c1b4f07ae?pvs=4#1d58459c3f5b42599ffaa97682c8860e)
+열거형 생성 시 내가 만들어둔 case가 연관값이 함께 뜬다. (자동완성)
 
 마지막으로 이렇게 열거형에 직접 값을 지정해서 사용할 수 있다
 
@@ -66,4 +63,19 @@ let product: AppleProduct = .iPhone(model: "13", storage: 528)
 </br>
 
 # 1-3. 연관값을 가지는 열거형의 Switch 매칭
+
+```swift
+switch product {
+    case .ipad("5s"): break                        // 연관값이 5s면 매칭
+    case .ipad: break                              // 연관값 무시
+    case .iPhone("X", _): break                    // 연관값 생략 가능
+    case .iPhone(let model, var storage): break    // 연관값 상수(변수) 바인딩
+    case let .macBook(model, stroage, size): break // 모든 연관값을 let으로 바인딩 시 let을 맨 앞으로 뺄 수 있슴  
+}
+
+```
+
+switch 매칭 시킬 때, 이런 식으로 다양하게 연관값을 매칭시켜서 사용할 수 있슴. <설명은 주석에>
+
+</br>
 
