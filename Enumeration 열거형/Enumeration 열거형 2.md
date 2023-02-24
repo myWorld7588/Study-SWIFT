@@ -54,7 +54,8 @@ enum AppleProduct {
 
 이렇게 열거형 생성 시 내가 만들어둔 case가 연관값이 함께 뜬다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3fa4577f-58ad-4f36-a8c7-4af687238f0c/Untitled.png)
+
+![Untitled](https://www.notion.so/Enumeration-2-2-b1b23675e2324404aa85f41c1b4f07ae?pvs=4#1d58459c3f5b42599ffaa97682c8860e)
 
 마지막으로 이렇게 열거형에 직접 값을 지정해서 사용할 수 있다
 
