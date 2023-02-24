@@ -58,6 +58,41 @@ var user3: Position = . // .(점문법) 자동완성
 
 위와 같은 원시 값을 가지고 싶다면, **enum 선언 시 이름 옆에 Type을 꼭꼭 명시**해주어야 한다.
 
+</br>
+
+# 2-3. Number Type을 가지는 열거형
+
+```swift
+enum Position: Int {
+    case top    // 0
+    case mid    // 1
+    case jug    // 2
+    case adc    // 3
+    case sup    // 4
+} // 이렇게 Int라는 타입을 enum 선언 시 이름 옆에 명시해주면 
+  // 가장 먼저 선언된 case부터 0부터 1씩 증가된 값이 들어감!!
+
+```
+
+만약 내가 **RawValue를 직접 지정** 해주고 싶다면 물론 가능하다
+
+```swift
+enum Position: Int {
+    case top = 0     // 0
+    case mid = 10    // 10
+    case jug         // 11
+    case adc = 24    // 24
+    case sup         // 25
+} // 대신 Raw Value가 없는 case는, 바로 이전 case의 Raw Value에서 +1한 값으로 셋팅됨!!
+```
+
+### Int형이 아닌 자료형으로 했을 경우에, 모든 case에 대해 값을 지정해주는 것이 아니면 다음과 같은 에러가 발생함.
+
+그 이유는, Number Type의 Raw Value는 **만약 값이 없으면**, **바로 이전 case의 Raw Value의 값에서 1이란 정수값**을 더한 값을 가진다. 그런데 바로 이전 Raw Value값인 adc가 **실수 4.0** 이다. 
+
+sup의 Raw Value를 컴파일러가 지정해야 하는데, **바로 이전 case인 adc의 Raw Value가 정수값이 아닌**
+
+**실수값이기 때문에** 못더해!!!!!! 하고 에러를 뱉는 것이다.
 
 
 
