@@ -23,3 +23,29 @@ enum AppleProduct: String {
 
 </br>
 
+### .
+
+# 1-1. 연관값을 가지는 열거형 선언 방법
+
+```swift
+enum TypeName {
+    case caseName(Type)
+	case caseName(Type, Type, ...)
+}
+```
+
+**이처럼 case 옆에 튜플 형태로 원하는 Type을 명시하면 된다**.  이때 Tuple은 Named Tuple도 되고, Unnamed Tuple 도 가능하다.
+
+**따라서, 아까 Raw Value로 한계가 있던 애플제품 예제를 연관 값으로 바꾸면**
+
+```swift
+enum AppleProduct {
+	case iPad = (model: String)
+	case iPhone = (model: String, storage: Int)
+	case macBook = (model: String, storage: Int, size: Int)
+} // 이런 식으로 튜플을 활용해서 원하는 연관값을 받을 수 있게 선언가능
+```
+
+</br>
+
+# *사용방법*
