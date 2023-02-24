@@ -23,8 +23,6 @@ enum AppleProduct: String {
 
 </br>
 
-### .
-
 # 1-1. 연관값을 가지는 열거형 선언 방법
 
 ```swift
@@ -48,4 +46,4 @@ enum AppleProduct {
 
 </br>
 
-# *사용방법*
+
