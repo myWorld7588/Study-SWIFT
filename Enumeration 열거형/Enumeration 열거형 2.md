@@ -7,9 +7,9 @@ Apple제품에 대해 열거형을 만들어보자.
 
 ```swift
 enum AppleProduct: String {
-		case iPad = "5, 526GB"
-		case iPhone = "13, 128GB"
-		case macBook = "Pro, 256GB"
+    case iPad = "5, 526GB"
+    case iPhone = "13, 128GB"
+    case macBook = "Pro, 256GB"
 }
 ```
 
@@ -22,3 +22,4 @@ enum AppleProduct: String {
 ### Associated Value 즉, 연관 값 이라는 것이다.
 
 </br>
+
