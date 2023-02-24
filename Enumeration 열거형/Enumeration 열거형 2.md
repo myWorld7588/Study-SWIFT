@@ -94,3 +94,21 @@ if case .iPhone(_, 64) = product { // product의 첫 번째 연관 값은 상관
 
 이런 식으로도, if 를 통해서도 연관값을 매칭시킬수 있다.
 
+</br>
+
+# 2. 프로토콜을 채택하는 열거형
+
+Class, Struct와 마찬가지로, **Enum에서도 프로토콜을 채택** 할 수 있슴!!
+
+```swift
+enum AppleProduct: String, CaseIterable {
+    case iPad = "5, 128GB"
+    case iPhone = "6, 64GB"
+    case macBook = "Pro, 256GB"
+}
+
+AppleProduct.allCases.randomElement()
+```
+
+위 코드처럼 이렇게 CaseIterable처럼 내가 원하는 프로토콜을 채택할 수 있고, 해당 프로토콜에 지정된 allCases 또한 당연히 사용 할수 있다.
+
