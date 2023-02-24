@@ -40,7 +40,11 @@ enum Position {
 
 따라서 오타의 가능성도 현저히 줄어들고, 코드의 가독성도 매우 높아짐
 
-![Screen Shot 2023-02-23 at 6.51.55 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/58d4f9e1-35e4-4591-b9af-59a210820808/Screen_Shot_2023-02-23_at_6.51.55_PM.png)
+```swift
+var user1: Position = .top
+var user2: Position = .sup
+var user3: Position = . // .(점문법) 자동완성
+```
 
 </br>
 
