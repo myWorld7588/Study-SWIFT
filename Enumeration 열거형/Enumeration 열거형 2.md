@@ -46,4 +46,23 @@ enum AppleProduct {
 
 </br>
 
+# *사용방법*
+
+# 1-2. 연관값을 가지는 열거형 생성 방법
+
+### 열거형 생성 시 연관값을 함께 전달한다
+
+이렇게 열거형 생성 시 내가 만들어둔 case가 연관값이 함께 뜬다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3fa4577f-58ad-4f36-a8c7-4af687238f0c/Untitled.png)
+
+마지막으로 이렇게 열거형에 직접 값을 지정해서 사용할 수 있다
+
+```swift
+let product: AppleProduct = .iPhone(model: "13", storage: 528)
+```
+
+</br>
+
+# 1-3. 연관값을 가지는 열거형의 Switch 매칭
 
