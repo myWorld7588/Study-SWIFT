@@ -79,3 +79,18 @@ switch 매칭 시킬 때, 이런 식으로 다양하게 연관값을 매칭시�
 
 </br>
 
+# 1-4. 연관값을 가지는 열거형의 if 사용법
+
+```swift
+if case let .iPhone("8", storage) = product {  // product의 첫 번째 연관값이 "8" 이면 매칭
+    print(storage)
+}
+
+if case .iPhone(_, 64) = product { // product의 첫 번째 연관 값은 상관없고, 두 번째 연관값이 64면 매칭
+    print("iPhone 64GB")
+}
+
+```
+
+이런 식으로도, if 를 통해서도 연관값을 매칭시킬수 있다.
+
