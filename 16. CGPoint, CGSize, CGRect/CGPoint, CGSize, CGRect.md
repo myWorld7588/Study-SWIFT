@@ -22,6 +22,9 @@ iOS에서 View를 그리기 위해선 어떤게 필요할까? 단순하게 View 
 
 ### 이제부터 설명할 CG 3총사가 **View를 그릴 때 필수**적으로 알아야하는 것들임
 
+</br>
+
+
 ## **2. (x, y) 좌표를 설정할 수 있는 CGPoint**
 
 자, CGPoit라는 구조체 생김새에 대해 먼저 보겠음
@@ -35,6 +38,9 @@ iOS에서 View를 그리기 위해선 어떤게 필요할까? 단순하게 View 
 ![https://blog.kakaocdn.net/dn/MGQZT/btqLAyRyYJ1/lbUbmqqyO6k2b8XYjkilwK/img.png](https://blog.kakaocdn.net/dn/MGQZT/btqLAyRyYJ1/lbUbmqqyO6k2b8XYjkilwK/img.png)
 
 실제 사용은 이런 식으로 함!!! 이제 CGPoint를 언제 쓰는지 이해감?
+
+</br>
+
 
 ## **3. (width, height) 사이즈를 설정할 수 있는 CGSize**
 
@@ -52,7 +58,10 @@ iOS에서 View를 그리기 위해선 어떤게 필요할까? 단순하게 View 
 
 ![https://blog.kakaocdn.net/dn/bk50Jj/btqLC1rWWVD/YkTeL0r0bfmBuUeIXXLzYK/img.png](https://blog.kakaocdn.net/dn/bk50Jj/btqLC1rWWVD/YkTeL0r0bfmBuUeIXXLzYK/img.png)
 
-## **3. CGSize와 CGPoint를 품은 CGRect**
+
+</br>
+
+## **4. CGSize와 CGPoint를 품은 CGRect**
 
 제목 말 그대로임 CGRect 구조체를 보면
 
