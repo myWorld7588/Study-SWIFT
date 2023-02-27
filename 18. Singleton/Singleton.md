@@ -163,6 +163,11 @@ userInfo.name = "Sundae"
 
 그럼 Singleton의 장점, 단점이 뭔지 알아보자!!!
 
+장점: - 한 번의 Instance만 생성하므로 메모리 낭비를 방지할 수 있음- Singleton Instance는 전역 Instance로 다른 클래스들과 자원 공유가 쉬움- DBCP(DataBase Connection Pool)처럼 공통된 객체를 여러개 생성해서 사용해야하는 상황에서 많이 사용 (쓰레드풀, 캐시, 대화상자, 사용자 설정, 레지스트리 설정, 로그 기록 객체등)
+
+단점: - Singleton Instance가 너무 많은 일을 하거나, 많은 데이터를 공유시킬 경우 다른 클래스의 Instance들 간 결합도가 높아져  "개방=폐쇄" 원칙을 위배함 (객체 지향 설계 원칙 어긋남)
+      - 따라서 수정과 테스트가 어려워짐 
+
 </br>
 
 # **5. Swift Singleton 개짱**
@@ -190,6 +195,8 @@ Swift는, 별도의 작업을 해주지 않더라도 static을 사용해 타입 
 음!? 따라서 **Singleton Instance가 최초 생성되기 전까진 메모리에 올라가지 않고, Dispatch_once도 자동 적용된다고 함!!!!**
 
 따라서 별 코드 없이도 Instance가 여러 개 생성되지 않는, **Thread-Safe한 방법**이 되는 것임
+
+</br>
 
 # **6. iOS에선 Singleton을 언제 쓰냐면,**
 
