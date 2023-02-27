@@ -73,7 +73,6 @@ var age: Int
 
 당연히 타입을 알려줬으니 초기값이 없어도됨
 
-됨
 
 왜냐면 타입을 알려줬으니 초기값을 통해 타입을 유추할 필요가 없으니까
 
@@ -92,6 +91,18 @@ var age: Int
 
 타입 추론보다 성가시다..?
 
-## **4. 정리**
+# 3. 정리
+
+### Type Inference
+
+- 선언: let name = “Uhmook”
+- 특징: 초기값을 지정
+- 문제점: 1. 원하는 타입이 추론되지 않을 수 있다 (Float, Double Character, String)
+
+### Type Annotation
+
+- 선언: let name: String
+- 특징: 자료형을 지정
+
 
 
